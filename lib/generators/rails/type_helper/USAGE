@@ -1,0 +1,13 @@
+Description:
+    Use this generator to convert an ApplicationRecord model into a GraphQL type and input. It can also generate policies and default mutations.
+
+Example:
+    rails generate type_helper ModelName
+
+    This will create:
+        app/graphql/types/model_name_type.rb
+        app/graphql/types/inputs/model_name_input.rb
+        app/graphql/mutations/model_name_mutations/model_name_create.rb
+        app/graphql/mutations/model_name_mutations/model_name_update.rb
+        app/graphql/mutations/model_name_mutations/model_name_delete.rb
+
