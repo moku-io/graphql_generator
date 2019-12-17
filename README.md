@@ -1,28 +1,31 @@
 # GraphqlGenerator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/graphql_generator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
+
+If your project included the GraphQL generator inside the `lib` folder, start by getting rid of the `lib/generators` directory.
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'graphql_generator'
+gem 'graphql_generator', github: 'moku-io/graphql_generator'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install graphql_generator
-
 ## Usage
 
-TODO: Write usage instructions here
+Generate type files for a given model `ModelName`:
+
+    $ rails g type_helper ModelName 
+    
+This command comes with the following options:
+- `--no-type`: skip type generation
+- `--no-policy`: skip policy generation
+- `--no-input`: skip input generation
+- `--no-mutations`: skip mutations generation
+- `--no-dependencies`: skip dependencies generation
 
 ## Development
 
