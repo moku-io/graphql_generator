@@ -1,6 +1,6 @@
 require_relative 'graphql_model_helper'
 
-class Rails::TypeHelperGenerator < Rails::Generators::NamedBase
+class Rails::GraphqlTypeGenerator < Rails::Generators::NamedBase
   # TODO: check for graphql dependencies - see https://guides.rubyonrails.org/generators.html#gem
   # The methods defined here are executed sequentially
 
@@ -178,10 +178,10 @@ class Rails::TypeHelperGenerator < Rails::Generators::NamedBase
       if missing_type || missing_policy || missing_input || missing_mutations
         if yes?("Found unresolved dependency for: #{dependency}. Do you want to generate it?")
           args = dependency.to_s + @options.map { |k, v| " --#{k} #{v}" }.join
-          generate :type_helper, args
+          generate :graphql_type, args
         end
       else
-        puts "Mutations dependency '#{dependency}' already satisfied. Run 'rails generate type_helper #{dependency}' to overwrite it."
+        puts "Mutations dependency '#{dependency}' already satisfied. Run 'rails generate graphql_type #{dependency}' to overwrite it."
       end
     end
   end

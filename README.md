@@ -18,7 +18,7 @@ And then execute:
 
 Generate type files for a given model `ModelName`:
 
-    $ rails g type_helper ModelName 
+    $ rails g graphql_type ModelName 
     
 This command comes with the following options:
 - `--no-type`: skip type generation
