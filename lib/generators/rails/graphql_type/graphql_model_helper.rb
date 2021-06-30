@@ -92,6 +92,8 @@ class GraphqlModelHelper
     when :datetime
       # ISO8601DateTime added ~2018
       'GraphQL::Types::ISO8601DateTime'
+    when :date
+      'GraphQL::Types::ISO8601Date'
     else
       "# not implemented: #{column.type}, for attr: #{column.name}"
     end
