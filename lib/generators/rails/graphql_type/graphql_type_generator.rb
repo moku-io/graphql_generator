@@ -55,7 +55,7 @@ class Rails::GraphqlTypeGenerator < Rails::Generators::NamedBase
     FILE
   end
 
-  def create_create_create_mutation_file
+  def create_create_mutation_file
     return if options['no_mutations']
 
     resolver_head = options['no_policy'] ? '' : "Pundit.authorize(current_user, #{class_name}, :create?)"
